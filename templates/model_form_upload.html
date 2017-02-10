@@ -1,0 +1,14 @@
+<style>
+	input{
+		color: black;
+	}
+</style>
+
+<div style="">
+  <form method="post" enctype="multipart/form-data" action="/login/upload/form/">
+    {% csrf_token %}
+    {{ form2 }}
+    <button type="submit">Upload</button>
+  </form>
+</div>
+  <!-- <p><a href="/login/after_login/">Upload another file</a></p> -->

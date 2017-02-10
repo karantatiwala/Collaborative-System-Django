@@ -8,6 +8,7 @@ from django.contrib import sessions
 from forms import Sign_Up_DataForm, LoginForm
 from django.contrib import messages
 from models import *
+from upload_data.forms import DocumentForm
 
 # Create your views here.
 
@@ -76,8 +77,9 @@ def after_login(request):
 		print request.session['username']
 		# return HttpResponse("yo yo bappa")
 		username = request.session['username']
+		form2 = DocumentForm()
 
-		return render_to_response('home.html', {'username' : username})
+		return render(request, 'home.html', {'username' : username,'form2': form2})
 	else:
 		return HttpResponse("404 not found")
 
@@ -85,3 +87,36 @@ def logout(request):
 	del request.session['username']
 	# print request.session['username']
 	return HttpResponseRedirect('/')
+
+
+def Iyear(request):
+	if 'username' in request.session:
+		print request.session['username']
+		username = request.session['username']
+		return render(request, 'Ist_Year.html', {'username' : username})
+	else:
+		return HttpResponse("404 not found")
+
+def IIyear(request):
+	if 'username' in request.session:
+		print request.session['username']
+		username = request.session['username']
+		return render(request, 'IInd_Year.html', {'username' : username})
+	else:
+		return HttpResponse("404 not found")
+
+def IIIyear(request):
+	if 'username' in request.session:
+		print request.session['username']
+		username = request.session['username']
+		return render(request, 'IIIrd_Year.html', {'username' : username})
+	else:
+		return HttpResponse("404 not found")
+
+def IVyear(request):
+	if 'username' in request.session:
+		print request.session['username']
+		username = request.session['username']
+		return render(request, 'IVth_Year.html', {'username' : username})
+	else:
+		return HttpResponse("404 not found")

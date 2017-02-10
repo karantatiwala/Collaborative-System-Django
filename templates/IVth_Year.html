@@ -1,24 +1,6 @@
+{% extends 'home.html' %}
 
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Collaborative System</title>
-        <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <!-- <link rel="stylesheet" type="text/css" href="style_home.css"> -->
-    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Spinnaker">
-    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Ruda">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link href="bootstrap.css" rel="stylesheet" />
-</head>
-
+{% block content %}
 <style>
     .branches:hover{
      -moz-transform: scale(0.0);
@@ -85,40 +67,7 @@ body {
 <body>
 
 
-<div style="">
-    <nav class="navbar navbar-inverse navbar-fixed-top" style="">
-      <div class="container-fluid">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>                        
-          </button>
-          <a class="navbar-brand" href="home.html" style="font-size: 30px; letter-spacing: 1px; word-spacing: 2px;">CS</a>
-        </div>
-        <div>
-          <div class="collapse navbar-collapse" id="myNavbar">
-            <ul class="nav navbar-nav" style="font-size: 15px; float: right;">
-              <li><a href="home.html#section1"><b>Home</b></a></li>
-              <li><a href="home.html#section2"><b>About Us</b></a></li>
-              <li><a href="home.html#section3"><b>Showcase</b></a></li>
-              <!-- <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Section 4 <span class="caret"></span></a> -->
-                <!-- <ul class="dropdown-menu"> -->
-                  <!-- <li><a href="#section41"><b>Login</b></a></li> -->
-                  <li><a href="#section42"><b>Contact Us</b></a></li>
-                <!-- </ul> -->
-              <!-- </li> -->
-            </ul>
-          </div>
-        </div>
-      </div>
-    </nav>    
-</div>
-
-
-
-
-<div class="container-fluid showcase" style="padding-top:50px;">
+<div class="container-fluid showcase" style="padding-top: 0px; margin-bottom: 25px;">
    <div style="margin-top: 40px;">
 
         <h1 style="text-align: center; margin-bottom:10px; font-family: Ruda; font-size: 50px; letter-spacing: 6px;" class="year"><b>IVth YEAR</b></h1>
@@ -141,84 +90,6 @@ body {
          
    </div>
 </div>
-
-
-<!-- CONTACT SECTION -->
-<div style="margin-top: 100px;">
-<div id="section42" class="container-fluid" style="height:450px;color: #fff; background-color: #2F4F4F;">
-    <div>
-      <div>
-        <h1>Contact Us</h1>
-        <hr style="width: 400px; margin-left: 0px;">
-        <h3><b>Karan Tatiwala</b></h3>
-        <h4><b>Email</b>: karantatiwala@gmail.com</h4>
-        <h4><b>Mo:</b> 9680848615</h4>
-        <h4><b>The LNM Institute Of Information Technology, Jaipur</b></h4>
-      </div>
-
-      <div style=" border-left:1px solid white;"></div>
-
-      <div style="float: right; border-left:1px solid white; height:300px; padding-left: 150px; margin-top: -150px;">
-        <div class="" style="width: 350px; margin-right: 200px; margin-top: -50px; "> 
-          <form>
-          <div class="form-group">
-            <label for="name">Name:</label>
-            <input type="text" class="form-control" id="name" placeholder="Enter Name">
-          </div>
-          <div class="form-group">
-            <label for="email">Email:</label>
-            <input type="email" class="form-control" id="email" placeholder="Enter Email">
-          </div>
-          <div class="form-group">
-            <label for="numb">Mobile No.:</label>
-            <input type="text" class="form-control" id="numb" placeholder="Enter Number">
-          </div>
-          <div class="form-group">
-            <label for="write">Tell Us:</label>
-            <textarea class="form-control" rows="2" id="comment" placeholder="Write Here" style="height: 80px;"></textarea>
-          </div>
-          <a href="#"><button type="submit" class="btn btn-primary">Submit</button></a>
-          </form>
-        </div>
-      </div>
-
-
-
- 
-    </div>
-
-    <style>
- 
-    #share-buttons img {
-    width: 50px;
-    padding: 5px;
-    border: 0;
-    box-shadow: 0;
-    display: inline;
-    }
-     
-    </style>
-
-    <div id="share-buttons">
-        <!-- Facebook -->
-        <a href="https://www.facebook.com/profile.php?id=100007447275016">
-          <img src="https://simplesharebuttons.com/images/somacro/facebook.png" alt="Facebook" />
-        </a>
-
-          <!-- Twitter -->
-        <a href="#">
-          <img src="https://simplesharebuttons.com/images/somacro/twitter.png" alt="Twitter" />
-        </a>
-
-         <!-- LinkedIn -->
-        <a href="#">
-          <img src="https://simplesharebuttons.com/images/somacro/linkedin.png" alt="LinkedIn" />
-        </a>
-    </div>
-
-    </div>
-    </div>
-
 
 
 <div id="mySidenavCSE" class="sidenav">
@@ -527,3 +398,4 @@ function closeNav() {
 </body>
 </body>
 </html>
+{% endblock %}

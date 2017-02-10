@@ -18,12 +18,9 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 	<meta name="description" content="">
 	<meta name="author" content="">
-	<!-- <link href="css/bootstrap.css" rel="stylesheet" />
-	<link rel="stylesheet" href="css/style.css"> -->
-
 	<link rel="stylesheet" type="text/css" href="{% static "assets/css/bootstrap.css" %}">
 	<link rel="stylesheet" type="text/css" href="{% static "assets/css/style.css" %}">
-	<!-- <link href="stylepro.css" rel="stylesheet" /> -->
+
 	
 
 
@@ -46,18 +43,6 @@
 	  #img3{background-image: url("{% static "assets/images/img4.jpg" %}");}
 	  #img4{background-image: url("{% static "assets/images/t2.png" %}");}
 
-
-	  #section1{
-		  /*max-width: 100%;*/  
-		  -moz-transition: all 0.3s;
-		  -webkit-transition: all 0.3s;
-		  transition: all 0.3s;
-		}
-	  #section1:hover{
-		  -moz-transform: scale(0.0);
-		  -webkit-transform: scale(0.0);
-		  transform: scale(1.05);
-		}
 
 		.portfolio-items {
   list-style: none;
@@ -124,18 +109,19 @@
 			  <span class="icon-bar"></span>
 			  <span class="icon-bar"></span>                        
 		  </button>
-		  <a class="navbar-brand" href="home.html" style="font-size: 30px; letter-spacing: 1px; word-spacing: 2px;">CS</a>
+		  <a class="navbar-brand" href="/" style="font-size: 30px; letter-spacing: 1px; word-spacing: 2px;">CS</a>
 		</div>
 		<div>
 		  <div class="collapse navbar-collapse" id="myNavbar">
 			<ul class="nav navbar-nav" style="font-size: 15px; float: right;">
-			  <li><a href="#section1"><b>Home</b></a></li>
+			 <!--  <li><a href="#section1"><b>Home</b></a></li> -->
 
 
 			  {% if username %}
 			  	<li><a href="/login/logout/"><b>{{ username }} Logout</b></a></li>
 			  {% else %}
 			  	<li><a href="" data-toggle="modal" data-target="#myModal"><b>Login</b></a></li>
+			  	 <li><a href="#section1"><b>Home</b></a></li>
 			  	<li><a href="#section2"><b>About Us</b></a></li>
 			  	<li><a href="#section3"><b>Showcase</b></a></li>
 			  {% endif %}
@@ -581,9 +567,47 @@
 
 	{% endif %}
 
+
+
+
+
 	{% if username %}
 
+
+	<div style="width: 900px; height: 200px;">
+
+		{% block upload_form %}
+			{% include 'model_form_upload.html' %}
+		{% endblock %}
+
+
+		{% if documents %}
+		  <p>Uploaded files:</p>
+		  <ul>
+		    {% for obj in documents %}
+		      <li>
+		        <a href="{{ obj.document.url }}">{{ obj.document.name }}</a>
+		        <small>(Uploaded at: {{ obj.uploaded_at }})</small>
+		      </li>
+		    {% endfor %}
+		      </ul>
+		    <h4><a href="/login/after_login/">Upload another file</a></h4>
+		
+		 {% endif %}
+
+	</div>
+
+
 	<div id="section3" class="container-fluid" style="">
+
+
+
+
+
+
+
+
+
 		<h1 style="font-family: Ruda; text-align: center; font-size: 50px; margin-top: 10px;"> <b>OUR PRODUCTS</b></h1>
 		<hr style="border-color: black; border-width: 1px; width: 200px; margin-top: 5px;">
 
@@ -600,7 +624,7 @@
 									<div class="portfolio-image">
 										<img src="{% static "assets/images/t1.png" %}" />
 										<div class="overlay">
-											<a class="preview btn btn-danger" href="/Ist_Year/"><i class=" fa fa-eye"></i></a>
+											<a class="preview btn btn-danger" href="/login/Ist_Year/"><i class=" fa fa-eye"></i></a>
 										</div>
 									</div>
 								</div>
@@ -613,7 +637,7 @@
 										<div class="portfolio-image">
 											<img src="{% static "assets/images/t2.png" %}" />
 											<div class="overlay">
-												<a class="preview btn btn-danger" href="IIIrd_Year.html"><i class=" fa fa-eye"></i></a>
+												<a class="preview btn btn-danger" href="/login/IIIrd_Year/"><i class=" fa fa-eye"></i></a>
 											</div>
 										</div>
 									</div>
@@ -627,7 +651,7 @@
 									<div class="portfolio-image">
 										<img src="{% static "assets/images/t3.png" %}" />
 										<div class="overlay">
-											<a class="preview btn btn-danger" href="IInd_Year.html"><i class=" fa fa-eye"></i></a>
+											<a class="preview btn btn-danger" href="/login/IInd_Year/"><i class=" fa fa-eye"></i></a>
 										</div>
 									</div>
 								</div>
@@ -640,7 +664,7 @@
 										<div class="portfolio-image">
 											<img src="{% static "assets/images/t4.png" %}" />
 											<div class="overlay">
-												<a class="preview btn btn-danger" href="IVth_Year.html"><i class=" fa fa-eye"></i></a>
+												<a class="preview btn btn-danger" href="/login/IVth_Year/"><i class=" fa fa-eye"></i></a>
 											</div>
 										</div>
 									</div>
