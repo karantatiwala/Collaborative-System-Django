@@ -10,6 +10,17 @@ from django.contrib import messages
 from models import *
 from upload_data.forms import DocumentForm
 
+from django.shortcuts import get_object_or_404
+from rest_framework.views import APIView
+from rest_framework.response import Response
+from rest_framework import status
+# from .models import Stock
+from .serializers import Sign_Up_DataSerializer
+
+
+
+
+
 # Create your views here.
 
 
@@ -120,3 +131,28 @@ def IVyear(request):
 		return render(request, 'IVth_Year.html', {'username' : username})
 	else:
 		return HttpResponse("404 not found")
+
+
+
+
+
+# from django.shortcuts import get_object_or_404
+# from rest_framework.views import APIView
+# from rest_framework.response import Response
+# from rest_framework import status
+# # from .models import Stock
+# from .serializers import Sign_Up_DataSerializer
+
+
+
+# List all Sign_Up_Data Or Create a new one
+# Sign_Up_Data/
+class Sign_Up_DataList(APIView):
+
+	def get(self, request):
+		signup = Sign_Up_Data.objects.all()
+		serializer = Sign_Up_DataSerializer(signup, many=True)
+		return Response(serializer.data)
+
+	def post(self):
+		pass

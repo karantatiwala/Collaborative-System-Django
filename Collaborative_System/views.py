@@ -10,3 +10,5 @@ def home(request):
 
 	# print request.session['username']
 	return render(request, 'home.html', {'form': form, 'form1':form1})
+
+

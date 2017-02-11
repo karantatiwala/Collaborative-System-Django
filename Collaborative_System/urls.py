@@ -15,12 +15,17 @@ Including another URLconf
 """
 from django.conf.urls import url, include
 from django.contrib import admin
-from .  import views
+from .views import home
+from rest_framework.urlpatterns import format_suffix_patterns
+from login import views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^login/', include('login.urls')),
     # url(r'^upload_data/', include('upload_data.urls')),
-    url(r'^$', views.home),
+    url(r'^$', home),
+    url(r'^Sign_Up_Data/', views.Sign_Up_DataList.as_view()),
 
 ]
+
+urlpatterns = format_suffix_patterns(urlpatterns)
